@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Avenger.css';
 
 const Avenger = ({av}) => {
@@ -8,9 +9,8 @@ const Avenger = ({av}) => {
         <img src={av.img} alt="" />
       </div>
       <div className="avenger-info">
-        <p>name: <span>{av.name}</span></p>
+        <h3><span><Link to={`/avengers/${av.id}`}>{av.name}</Link></span></h3>
         <p>nickname: <span>{av.nickname}</span></p>
-        <p>description: <span>{av.description}</span></p>
         <p>description: <span>{av.description}</span></p>
         <p>moviies: <span>{av.movies.map(movie => movie,)}</span></p>
       </div>
